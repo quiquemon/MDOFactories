@@ -14,13 +14,25 @@
 		<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 		<script src="${pageContext.request.contextPath}/js/dragula.min.js"></script>
 		<script src="${pageContext.request.contextPath}/js/mdo-factories.js"></script>
+		<script src="${pageContext.request.contextPath}/js/mdo-utilities.js"></script>
 		<script src="${pageContext.request.contextPath}/js/funciones.js"></script>
 		<script>
 			$(document).ready(function() {
 				$("#btnGuardar").click(function() {
-					$.post("${pageContext.request.contextPath}/mdocontenido/GuardarProgreso", {param: "Parámetro"}, function(response) {
-						alert(response.stateMap.message);
-					});
+					var listaArtefactos = MDOUtil.parseNodeList(document.querySelectorAll(".ex-moved > div"));
+					
+					if (listaArtefactos.length > 0) {
+						var artefactos = MDOUtil.getListaArtefactos(listaArtefactos);
+						$.ajax({
+							url: "${pageContext.request.contextPath}/mdocontenido/GuardarProgreso",
+							type: "POST",
+							contentType: "application/json",
+							data: JSON.stringify(artefactos),
+							success: function(response) {
+								console.log(response.message);
+							}
+						});
+					}
 				});
 				
 				$("#btnDescargar").click(function() {
@@ -36,12 +48,6 @@
 			<div class="row">
 				<h1>Fábricas Abstractas de MDO</h1>
 			</div>
-			<s:if test="hasActionMessages()">
-				<div class="alert alert-success fade in">
-					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-					<s:actionmessage />
-				</div>
-			</s:if>
 		</div>
 		<div class="container-fluid">
 			<div class="row">

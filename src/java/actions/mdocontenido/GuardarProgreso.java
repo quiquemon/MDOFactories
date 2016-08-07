@@ -1,33 +1,33 @@
 package actions.mdocontenido;
 
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 
 public class GuardarProgreso extends ActionSupport {
 	
-	private Map<String, String> stateMap = new HashMap<>();
-	private String param;
+	/**
+	 * Recibe los artefactos del cliente en JSON.
+	 */
+	private List<Map<String, Object>> artefactos;
+	
+	/**
+	 * Mensaje de respuesta al cliente.
+	 */
+	private String message;
 
 	@Override
 	public String execute() throws Exception {
-		stateMap.put("message", "El nombre del parámetro fue: " + param);
+		
+		message = "Su progreso ha sido guardado.";
 		return SUCCESS;
 	}
 	
-	public void setParam(String param) {
-		this.param = param;
+	public void setArtefactos(List<Map<String, Object>> artefactos) {
+		this.artefactos = artefactos;
 	}
 	
-	public String getParam() {
-		return param;
-	}
-	
-	public void setStateMap(Map<String, String> stateMap) {
-		this.stateMap = stateMap;
-	}
-	
-	public Map<String, String> getStateMap() {
-		return stateMap;
+	public String getMessage() {
+		return message;
 	}
 }
