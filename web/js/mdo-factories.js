@@ -46,7 +46,7 @@ var MDOFactories = (function() {
 		}
 
 		function JuegoRol() {
-			return "<div class='mdo-vivencia-juego-rol panel panel-success'>\n\
+			return "<div class='mdo-vivencia-juegorol panel panel-success'>\n\
 						<div class='panel-heading'><strong>Juego de Rol</strong></div>\n\
 						<div class='panel-body'>\n\
 							<textarea class='form-control'></textarea>\n\
@@ -172,6 +172,8 @@ var MDOFactories = (function() {
 						<div class='panel-body'>\n\
 							<label>Nombre:</label>\n\
 							<input type='text' class='form-control' /><br>\n\
+							<label>Descripción:</label>\n\
+							<input type='text' class='form-control' />\n\
 						</div>\n\
 					</div>";
 		}
@@ -335,7 +337,7 @@ var MDOFactories = (function() {
 		}
 		
 		function Ejercicios() {
-			return "<div class='mdo-aplicacion-proyectoejercicios panel panel-default panel-mdo-aplicacion'>\n\
+			return "<div class='mdo-aplicacion-ejercicios panel panel-default panel-mdo-aplicacion'>\n\
 						<div class='panel-heading'><strong>Ejercicios</strong></div>\n\
 						<div class='panel-body'>\n\
 							<textarea class='form-control'></textarea>\n\
@@ -382,7 +384,7 @@ var MDOFactories = (function() {
 	
 	var _AmpliacionFactory = (function() {
 		function Conferencia() {
-			return "<div class='mdo-amplicacion-conferencia panel panel-default panel-mdo-ampliacion'>\n\
+			return "<div class='mdo-ampliacion-conferencia panel panel-default panel-mdo-ampliacion'>\n\
 						<div class='panel-heading'><strong>Conferencia</strong></div>\n\
 						<div class='panel-body'>\n\
 							<textarea class='form-control'></textarea>\n\
@@ -391,7 +393,7 @@ var MDOFactories = (function() {
 		}
 		
 		function MesaRedonda() {
-			return "<div class='mdo-amplicacion-mesaredonda panel panel-default panel-mdo-ampliacion'>\n\
+			return "<div class='mdo-ampliacion-mesaredonda panel panel-default panel-mdo-ampliacion'>\n\
 						<div class='panel-heading'><strong>Mesa Redonda</strong></div>\n\
 						<div class='panel-body'>\n\
 							<textarea class='form-control'></textarea>\n\
@@ -400,7 +402,7 @@ var MDOFactories = (function() {
 		}
 		
 		function Panel() {
-			return "<div class='mdo-amplicacion-panel panel panel-default panel-mdo-ampliacion'>\n\
+			return "<div class='mdo-ampliacion-panel panel panel-default panel-mdo-ampliacion'>\n\
 						<div class='panel-heading'><strong>Panel</strong></div>\n\
 						<div class='panel-body'>\n\
 							<textarea class='form-control'></textarea>\n\
@@ -409,7 +411,7 @@ var MDOFactories = (function() {
 		}
 		
 		function Simposio() {
-			return "<div class='mdo-amplicacion-simposio panel panel-default panel-mdo-ampliacion'>\n\
+			return "<div class='mdo-ampliacion-simposio panel panel-default panel-mdo-ampliacion'>\n\
 						<div class='panel-heading'><strong>Simposio</strong></div>\n\
 						<div class='panel-body'>\n\
 							<textarea class='form-control'></textarea>\n\

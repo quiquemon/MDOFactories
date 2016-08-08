@@ -1,6 +1,35 @@
 $(document).ready(function(){
 	populateArtefactos();
 	agregarDragAndDrop("#documentacionPanelBody", "DocumentacionFactory");
+	
+	$("#btnGuardar").click(function() {
+		var listaArtefactos = MDOUtil.parseNodeList(document.querySelectorAll(".ex-moved > div"));
+		$("#header .alert").remove();
+
+		if (listaArtefactos.length > 0) {
+			var artefactos = MDOUtil.getListaArtefactos(listaArtefactos);
+			console.log(artefactos);
+			$.ajax({
+				url: APP_BASE + "/mdocontenido/GuardarProgreso",
+				type: "POST",
+				contentType: "application/json",
+				data: JSON.stringify(artefactos),
+				success: function(response) {
+					$("#header").append("\
+						<div class='alert alert-success'>\n\
+							<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>\n\
+							" + response.message + "\n\
+						</div>");
+				}
+			});
+		}
+	});
+
+	$("#btnDescargar").click(function() {
+		$.post(APP_BASE + "/mdocontenido/DescargarContenido", {}, function(response) {
+			alert(response.stateMap.message);
+		});
+	});
 });
 
 /**

@@ -10,41 +10,18 @@
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/dragula.min.css">
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/estilo.css">
+		<script>
+			var APP_BASE = "${pageContext.request.contextPath}";
+		</script>
 		<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 		<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 		<script src="${pageContext.request.contextPath}/js/dragula.min.js"></script>
 		<script src="${pageContext.request.contextPath}/js/mdo-factories.js"></script>
 		<script src="${pageContext.request.contextPath}/js/mdo-utilities.js"></script>
 		<script src="${pageContext.request.contextPath}/js/funciones.js"></script>
-		<script>
-			$(document).ready(function() {
-				$("#btnGuardar").click(function() {
-					var listaArtefactos = MDOUtil.parseNodeList(document.querySelectorAll(".ex-moved > div"));
-					
-					if (listaArtefactos.length > 0) {
-						var artefactos = MDOUtil.getListaArtefactos(listaArtefactos);
-						$.ajax({
-							url: "${pageContext.request.contextPath}/mdocontenido/GuardarProgreso",
-							type: "POST",
-							contentType: "application/json",
-							data: JSON.stringify(artefactos),
-							success: function(response) {
-								console.log(response.message);
-							}
-						});
-					}
-				});
-				
-				$("#btnDescargar").click(function() {
-					$.post("${pageContext.request.contextPath}/mdocontenido/DescargarContenido", {}, function(response) {
-						alert(response.stateMap.message);
-					});
-				});
-			});
-		</script>
 	</head>
 	<body>
-		<div class="container" align="center">
+		<div id="header" class="container" align="center">
 			<div class="row">
 				<h1>Fábricas Abstractas de MDO</h1>
 			</div>

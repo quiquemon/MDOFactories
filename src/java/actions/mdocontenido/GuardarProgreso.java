@@ -18,7 +18,6 @@ public class GuardarProgreso extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		
 		message = "Su progreso ha sido guardado.";
 		return SUCCESS;
 	}
