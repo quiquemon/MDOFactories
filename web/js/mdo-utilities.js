@@ -1,9 +1,5 @@
 var MDOUtil = (function() {
 	var MDOParser = (function() {
-		/**
-		 * ascoasihcoiashc
-		 * @type asasd
-		 */
 		var _VivenciaParser = (function() {
 			function ObservacionParser(nombreArtefacto, contenido) {
 				
@@ -105,36 +101,124 @@ var MDOUtil = (function() {
 		})();
 		
 		var _DocumentacionParser = (function() {
-			function LecturaParser(nombreArtefacto, contenido) {
-				var inputs = contenido.children("input");
-				var nombre = inputs[0].value;
+			function PeliculaParser(nombreArtefacto, contenido) {
+				var inputs = contenido.children().eq(0).children().eq(0).children("input");
+				var titulo = inputs[0].value;
 				var descripcion = inputs[1].value;
+				var director = inputs[2].value;
+				inputs = contenido.children().eq(0).children().eq(1).children("input");
+				var productora = inputs[0].value;
+				var pais = inputs[1].value;
+				var anyo = inputs[2].value;
 				
 				return {
 					artefacto: nombreArtefacto,
-					nombre: nombre,
-					descripcion: descripcion
+					titulo: titulo,
+					descripcion: descripcion,
+					director: director,
+					productora: productora,
+					pais: pais,
+					anyo: anyo
 				};
 			}
 			
 			function VideoParser(nombreArtefacto, contenido) {
+				var inputs = contenido.children("input");
+				var nombre = inputs[0].value;
+				var descripcion = inputs[1].value;
+				var url = inputs[2].value;
 				
+				return {
+					artefacto: nombreArtefacto,
+					nombre: nombre,
+					descripcion: descripcion,
+					url: url
+				};
 			}
 			
-			function CitaBibliograficaParser(nombreArtefacto, contenido) {
+			function LibroParser(nombreArtefacto, contenido) {
+				var inputs = contenido.children().eq(0).children().eq(0).children("input");
+				var autor = inputs[0].value;
+				var titulo = inputs[1].value;
+				var anyo = inputs[2].value;
+				inputs = contenido.children().eq(0).children().eq(1).children("input");
+				var ciudad = inputs[0].value;
+				var editorial = inputs[1].value;
+				var volumen = inputs[2].value;
 				
+				return {
+					artefacto: nombreArtefacto,
+					autor: autor,
+					titulo: titulo,
+					anyo: anyo,
+					ciudad: ciudad,
+					editorial: editorial,
+					volumen: volumen
+				};
 			}
 			
 			function ArticuloWebParser(nombreArtefacto, contenido) {
+				var inputs = contenido.children().eq(0).children().eq(0).children("input");
+				var autor = inputs[0].value;
+				var titulo = inputs[1].value;
+				var descripcion = inputs[2].value;
+				var nombre = inputs[3].value;
+				inputs = contenido.children().eq(0).children().eq(1).children("input");;
+				var anyo = inputs[0].value;
+				var mes = inputs[1].value;
+				var dia = inputs[2].value;
+				var url = inputs[3].value;
 				
+				return {
+					artefacto: nombreArtefacto,
+					autor: autor,
+					titulo: titulo,
+					descripcion: descripcion,
+					nombre: nombre,
+					anyo: anyo,
+					mes: mes,
+					dia: dia,
+					url: url
+				};
 			}
 			
 			function ArticuloPDFParser(nombreArtefacto, contenido) {
+				var inputs = contenido.children("input");
+				var nombre = inputs[0].value;
+				var descripcion = inputs[1].value;
+				var url = inputs[2].value;
 				
+				return {
+					artefacto: nombreArtefacto,
+					nombre: nombre,
+					descripcion: descripcion,
+					url: url
+				};
 			}
 			
 			function RevistaParser(nombreArtefacto, contenido) {
+				var inputs = contenido.children().eq(0).children().eq(0).children("input");
+				var autor = inputs[0].value;
+				var titulo = inputs[1].value;
+				var descripcion = inputs[2].value;
+				var nombre = inputs[3].value;
+				inputs = contenido.children().eq(0).children().eq(1).children("input");
+				var anyo = inputs[0].value;
+				var paginas = inputs[1].value;
+				var volumen = inputs[2].value;
+				var numero = inputs[3].value;
 				
+				return {
+					artefacto: nombreArtefacto,
+					autor: autor,
+					titulo: titulo,
+					descripcion: descripcion,
+					nombre: nombre,
+					anyo: anyo,
+					paginas: paginas,
+					volumen: volumen,
+					numero: numero
+				};
 			}
 			
 			/**
@@ -146,12 +230,12 @@ var MDOUtil = (function() {
 			 * sobre el artefacto.
 			 */
 			function _parse(nombreArtefacto, contenido) {
-				if (nombreArtefacto.includes("lectura"))
-					return LecturaParser(nombreArtefacto, contenido);
+				if (nombreArtefacto.includes("pelicula"))
+					return PeliculaParser(nombreArtefacto, contenido);
 				else if (nombreArtefacto.includes("video"))
 					return VideoParser(nombreArtefacto, contenido);
-				else if (nombreArtefacto.includes("citabibliografica"))
-					return CitaBibliograficaParser(nombreArtefacto, contenido);
+				else if (nombreArtefacto.includes("libro"))
+					return LibroParser(nombreArtefacto, contenido);
 				else if (nombreArtefacto.includes("articuloweb"))
 					return ArticuloWebParser(nombreArtefacto, contenido);
 				else if (nombreArtefacto.includes("articulopdf"))

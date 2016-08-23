@@ -38,7 +38,7 @@
 									</a>
 								</h4>
 							</div>
-							<div id="vivenciaPanel" class="panel-collapse collapse in">
+							<div id="vivenciaPanel" class="panel-collapse collapse">
 								<div id="vivenciaPanelBody" class="panel-body"></div>
 							</div>
 						</div>
@@ -62,7 +62,7 @@
 									</a>
 								</h4>
 							</div>
-							<div id="documentacionPanel" class="panel-collapse collapse">
+							<div id="documentacionPanel" class="panel-collapse collapse in">
 								<div id="documentacionPanelBody" class="panel-body"></div>
 							</div>
 						</div>
