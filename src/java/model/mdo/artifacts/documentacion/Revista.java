@@ -55,7 +55,41 @@ public class Revista implements MDOArtifact {
 	
 	@Override
 	public String toHtml() {
-		return String.format("Revista[%s, %s, %s, %s, %s, %s, %s, %s]",
-			autor, titulo, descripcion, nombre, anyo, paginas, volumen, numero);
+		return String.format(
+			"<div class=\"container\">\n" +
+	"			<div class=\"panel panel-info\">\n" +
+	"				<div class=\"panel-heading\">\n" +
+	"					<strong>Revista</strong>\n" +
+	"				</div>\n" +
+	"				<div class=\"panel-body\">\n" +
+	"					<div class=\"col-md-12\">\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Autor:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Título:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Descripción:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Nombre de la revista:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Año:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Páginas:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Volumen:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Número:</strong> %s" +
+	"						</div>\n" +
+	"					</div>\n" +
+	"				</div>\n" +
+	"			</div>\n" +
+	"		</div>", autor, titulo, descripcion, nombre, anyo, paginas, volumen, numero);
 	}
 }

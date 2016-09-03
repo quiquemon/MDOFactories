@@ -43,7 +43,35 @@ public class Libro implements MDOArtifact {
 	
 	@Override
 	public String toHtml() {
-		return String.format("Libro[%s, %s, %s, %s, %s, %s]",
-			autor, titulo, anyo, ciudad, editorial, volumen);
+		return String.format(
+			"<div class=\"container\">\n" +
+	"			<div class=\"panel panel-info\">\n" +
+	"				<div class=\"panel-heading\">\n" +
+	"					<strong>Libro</strong>\n" +
+	"				</div>\n" +
+	"				<div class=\"panel-body\">\n" +
+	"					<div class=\"col-md-12\">\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Autor:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Título:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Año:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Ciudad:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Editorial:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Volumen:</strong> %s" +
+	"						</div>\n" +
+	"					</div>\n" +
+	"				</div>\n" +
+	"			</div>\n" +
+	"		</div>", autor, titulo, anyo, ciudad, editorial, volumen);
 	}
 }

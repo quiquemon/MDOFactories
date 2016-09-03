@@ -25,6 +25,26 @@ public class ArticuloPDF implements MDOArtifact {
 	
 	@Override
 	public String toHtml() {
-		return String.format("Artículo PDF[%s, %s, %s]", nombre, descripcion, url);
+		return String.format(
+			"<div class=\"container\">\n" +
+	"			<div class=\"panel panel-info\">\n" +
+	"				<div class=\"panel-heading\">\n" +
+	"					<strong>Artículo PDF</strong>\n" +
+	"				</div>\n" +
+	"				<div class=\"panel-body\">\n" +
+	"					<div class=\"col-md-12\">\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Nombre:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Descripción:</strong> %s" +
+	"						</div>\n" +
+	"						<div align=\"center\">\n" +
+	"							<object data='%s' type='application/pdf' width='700' height='480'></object>\n" +
+	"						</div>\n" +
+	"					</div>\n" +
+	"				</div>\n" +
+	"			</div>\n" +
+	"		</div>", nombre, descripcion, url);
 	}
 }

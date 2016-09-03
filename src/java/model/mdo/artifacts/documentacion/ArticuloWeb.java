@@ -55,7 +55,41 @@ public class ArticuloWeb implements MDOArtifact {
 	
 	@Override
 	public String toHtml() {
-		return String.format("Artículo Web[%s, %s, %s, %s, %s, %s, %s, %s]",
-			autor, titulo, descripcion, nombre, anyo, mes, dia, url);
+		return String.format(
+			"<div class=\"container\">\n" +
+	"			<div class=\"panel panel-info\">\n" +
+	"				<div class=\"panel-heading\">\n" +
+	"					<strong>Artículo Web</strong>\n" +
+	"				</div>\n" +
+	"				<div class=\"panel-body\">\n" +
+	"					<div class=\"col-md-12\">\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Autor:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Título:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Descripción:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Nombre del sitio Web:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Año en que se realizó la consulta:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Mes en el que se realizó la consulta:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Día en que se realizó la consulta:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>URL:</strong> <a href='%s' target='_blank'>%s</a>" +
+	"						</div>\n" +
+	"					</div>\n" +
+	"				</div>\n" +
+	"			</div>\n" +
+	"		</div>", autor, titulo, descripcion, nombre, anyo, mes, dia, url, nombre);
 	}
 }

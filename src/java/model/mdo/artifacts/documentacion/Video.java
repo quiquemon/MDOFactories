@@ -25,6 +25,26 @@ public class Video implements MDOArtifact {
 	
 	@Override
 	public String toHtml() {
-		return String.format("Video[%s, %s, %s]", nombre, descripcion, url);
+		return String.format(
+			"<div class=\"container\">\n" +
+	"			<div class=\"panel panel-info\">\n" +
+	"				<div class=\"panel-heading\">\n" +
+	"					<strong>Video</strong>\n" +
+	"				</div>\n" +
+	"				<div class=\"panel-body\">\n" +
+	"					<div class=\"col-md-12\">\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Nombre:</strong> %s" +
+	"						</div>\n" +
+	"						<div class=\"well well-sm\">\n" +
+	"							<strong>Descripción:</strong> %s" +
+	"						</div>\n" +
+	"						<div align=\"center\">\n" +
+	"							<iframe width=\"700\" height=\"480\" src=\"%s\" frameborder=\"0\" allowfullscreen></iframe>\n" +
+	"						</div>\n" +
+	"					</div>\n" +
+	"				</div>\n" +
+	"			</div>\n" +
+	"		</div>", nombre, descripcion, url);
 	}	
 }

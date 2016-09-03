@@ -401,13 +401,25 @@ var MDOUtil = (function() {
 	 * deben ser de la clase .mdo-[etapa]-[artefacto]
 	 * 
 	 * @param {Array} nodeArray Un arreglo JavaScript de objetos DOM Node.
-	 * @returns {Object} Un objeto que contiene una lista de objetos-artefacto.
+	 * @param {string} etapa El nombre de la etapa en construcción.
+	 * @param {string} contenido El nombre del contenido didáctico en construcción.
+	 * @param {string} token El token del grupo creador de este contenido didáctico.
+	 * @returns {Object} Un objeto que contiene una lista de objetos-artefacto. El primer
+	 * objeto de esta lista siempre contendrá los últimos tres parámetros de esta función.
 	 */
-	function _getListaArtefactos(nodeArray) {
+	function _getListaArtefactos(nodeArray, etapa, contenido, token) {
+		var artefactos = nodeArray.map(function(e) {
+			return _parseNode(e);
+		});
+		
+		artefactos.unshift({
+			etapa: etapa,
+			contenido: contenido,
+			token: token
+		});
+		
 		return {
-			artefactos: nodeArray.map(function(e) {
-				return _parseNode(e);
-			})
+			artefactos: artefactos
 		};
 	}
 	

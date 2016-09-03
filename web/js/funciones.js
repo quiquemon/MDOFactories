@@ -7,7 +7,7 @@ $(document).ready(function(){
 		$("#header .alert").remove();
 
 		if (listaArtefactos.length > 0) {
-			var artefactos = MDOUtil.getListaArtefactos(listaArtefactos);
+			var artefactos = MDOUtil.getListaArtefactos(listaArtefactos, "Documentacion", "Contenido de Ejemplo", "CFH765KHSIUH");
 			console.log(artefactos);
 			$.ajax({
 				url: APP_BASE + "/mdocontenido/GuardarProgreso",
