@@ -13,12 +13,16 @@
 		<script>
 			var APP_BASE = "${pageContext.request.contextPath}";
 		</script>
+        
+        <script src="${pageContext.request.contextPath}/js/together-js-config.js"></script>
+        <script src="https://togetherjs.com/togetherjs-min.js"></script>
 		<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 		<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 		<script src="${pageContext.request.contextPath}/js/dragula.min.js"></script>
 		<script src="${pageContext.request.contextPath}/js/mdo-factories.js"></script>
 		<script src="${pageContext.request.contextPath}/js/mdo-utilities.js"></script>
 		<script src="${pageContext.request.contextPath}/js/funciones.js"></script>
+        <script src="${pageContext.request.contextPath}/js/together-js-comChannel.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<div id="header" class="container" align="center">
@@ -26,7 +30,7 @@
 				<h1>Fábricas Abstractas de MDO</h1>
 			</div>
 		</div>
-		<div class="container-fluid">
+        <div class="container-fluid">
 			<div class="row">
 				<div class="col-md-2 col-sm-2 col-xs-4 fixed">
 					<div id="menuMDO" class="panel-group">
