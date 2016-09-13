@@ -53,6 +53,7 @@ function agregarDragAndDrop(selector, nombreFabrica) {
 		removeOnSpill: true
 	}).on("drag", function(el) {
 		el.className = el.className.replace("ex-moved", "");
+        updateTogetherJS( $("#contenidoDidacticoBody").html() );
 	}).on("drop", function(el) {
 		var artefacto = el.className.replace("gu-transit", "").trim();
 		if (!el.innerHTML.includes("mdo-"))
@@ -62,6 +63,12 @@ function agregarDragAndDrop(selector, nombreFabrica) {
 		container.className += " ex-over";
 	}).on("out", function(el, container) {
 		container.className = container.className.replace("ex-over", "");
+	}).on("dragend", function(el, container) {
+        updateTogetherJS( $("#contenidoDidacticoBody").html() );
+        TogetherJS.reinitialize();
+	}).on("shadow", function(el, container) {
+        updateTogetherJS( $("#contenidoDidacticoBody").html() );
+        TogetherJS.reinitialize();
 	});
 }
 
