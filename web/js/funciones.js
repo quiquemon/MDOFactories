@@ -3,13 +3,13 @@ $(document).ready(function(){
 	agregarDragAndDrop("#documentacionPanelBody", "DocumentacionFactory");
 	
 	$("#btnGuardar").click(function() {
-		var listaArtefactos = MDOUtil.parseNodeList(document.querySelectorAll(".ex-moved > div"));
+		var listaArtefactos = MDOUtil.parseNodeList(document.querySelectorAll(".event"));
 		$("#header .alert").remove();
-
+		
 		if (listaArtefactos.length > 0) {
 			var artefactos = MDOUtil.getListaArtefactos(listaArtefactos, "Documentacion", "Contenido de Ejemplo", "CFH765KHSIUH");
 			console.log(artefactos);
-			$.ajax({
+			/*$.ajax({
 				url: APP_BASE + "/mdocontenido/GuardarProgreso",
 				type: "POST",
 				contentType: "application/json",
@@ -21,7 +21,7 @@ $(document).ready(function(){
 							" + response.message + "\n\
 						</div>");
 				}
-			});
+			});*/
 		}
 	});
 
@@ -55,9 +55,13 @@ function agregarDragAndDrop(selector, nombreFabrica) {
 		el.className = el.className.replace("ex-moved", "");
         updateTogetherJS( $("#contenidoDidacticoBody").html() );
 	}).on("drop", function(el) {
-		var artefacto = el.className.replace("gu-transit", "").trim();
-		if (!el.innerHTML.includes("mdo-"))
-			el.innerHTML = MDOFactories[nombreFabrica].crear(artefacto);
+		var nombreArtefacto = el.className.replace("gu-transit", "").trim();
+		if (!el.className.includes("mdo-")) {
+			var artefacto = MDOFactories[nombreFabrica].crear(nombreArtefacto);
+			var div = document.createElement("div");
+			div.innerHTML = artefacto;
+			el.parentNode.replaceChild(div.firstChild, el);
+		}
 		el.className += " ex-moved";
 	}).on("over", function(el, container) {
 		container.className += " ex-over";

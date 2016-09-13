@@ -167,147 +167,127 @@ var MDOFactories = (function() {
 	
 	var _DocumentacionFactory = (function() {
 		function Pelicula() {
-			return "<div class='mdo-documentacion-pelicula panel panel-default panel-mdo-documentacion'>\n\
-						<div class='panel-heading'><strong>Película</strong></div>\n\
-						<div class='panel-body'>\n\
-							<div class='row'>\n\
-								<div class='col-md-6'>\n\
-									<label>Título:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Descripción:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Director:</label>\n\
-									<input type='text' class='form-control' />\n\
-								</div>\n\
-								<div class='col-md-6'>\n\
-									<label>Productora:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>País o región:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Año:</label>\n\
-									<input type='text' class='form-control' />\n\
-								</div>\n\
-							</div>\n\
+			return "<li class='mdo-documentacion-pelicula event'>\n\
+						<h2 class='heading'>Película</h2>\n\
+						<div class='col-md-6'>\n\
+							<label>Título:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Descripción:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Director:</label>\n\
+							<input type='text' class='form-control' />\n\
 						</div>\n\
-					</div>";
+						<div class='col-md-6'>\n\
+							<label>Productora:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>País o región:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Año:</label>\n\
+							<input type='text' class='form-control' />\n\
+						</div>\n\
+					</li>";
 		}
 		
 		function Video() {
-			return "<div class='mdo-documentacion-video panel panel-default panel-mdo-documentacion'>\n\
-						<div class='panel-heading'><strong>Video</strong></div>\n\
-						<div class='panel-body'>\n\
-							<label>Nombre:</label>\n\
-							<input type='text' class='form-control' /><br>\n\
-							<label>Descripción:</label>\n\
-							<input type='text' class='form-control' /><br>\n\
-							<label>URL del video:</label>\n\
-							<input type='text' class='form-control' />\n\
-							<br>\n\
-							<button class='btn btn-primary'>O puedes subir un video</button>\n\
-						</div>\n\
-					</div>";
+			return "<li class='mdo-documentacion-video event'>\n\
+						<h2 class='heading'>Video</h2>\n\
+						<label>Nombre:</label>\n\
+						<input type='text' class='form-control' /><br>\n\
+						<label>Descripción:</label>\n\
+						<input type='text' class='form-control' /><br>\n\
+						<label>URL del video:</label>\n\
+						<input type='text' class='form-control' />\n\
+						<br>\n\
+						<button class='btn btn-primary'>O puedes subir un video</button>\n\
+					</li>";
 		}
 		
 		function Libro() {
-			return "<div class='mdo-documentacion-libro panel panel-default panel-mdo-documentacion'>\n\
-						<div class='panel-heading'><strong>Libro</strong></div>\n\
-						<div class='panel-body'>\n\
-							<div class='row'>\n\
-								<div class='col-md-6'>\n\
-									<label>Autor:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Título:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Año:</label>\n\
-									<input type='text' class='form-control' />\n\
-								</div>\n\
-								<div class='col-md-6'>\n\
-									<label>Ciudad:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Editorial:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Volumen:</label>\n\
-									<input type='text' class='form-control' />\n\
-								</div>\n\
-							</div>\n\
+			return "<li class='mdo-documentacion-libro event'>\n\
+						<h2 class='heading'>Libro</h2>\n\
+						<div class='col-md-6'>\n\
+							<label>Autor:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Título:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Año:</label>\n\
+							<input type='text' class='form-control' />\n\
 						</div>\n\
-					</div>";
+						<div class='col-md-6'>\n\
+							<label>Ciudad:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Editorial:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Volumen:</label>\n\
+							<input type='text' class='form-control' />\n\
+						</div>\n\
+					</li>";
 		}
 		
 		function ArticuloWeb() {
-			return "<div class='mdo-documentacion-articuloweb panel panel-default panel-mdo-documentacion'>\n\
-						<div class='panel-heading'><strong>Artículo Web</strong></div>\n\
-						<div class='panel-body'>\n\
-							<div class='row'>\n\
-								<div class='col-md-6'>\n\
-									<label>Autor:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Título:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Descripción:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Nombre del sitio Web:</label>\n\
-									<input type='text' class='form-control' />\n\
-								</div>\n\
-								<div class='col-md-6'>\n\
-									<label>Año en que se realizó la consulta:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Mes en el que se realizó la consulta:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Día en el que se realizó la consulta:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>URL:</label>\n\
-									<input type='text' class='form-control' />\n\
-								</div>\n\
-							</div>\n\
-						</div>\n\
-					</div>";
-		}
-		
-		function ArticuloPDF() {
-			return "<div class='mdo-documentacion-articulopdf panel panel-default panel-mdo-documentacion'>\n\
-						<div class='panel-heading'><strong>Artículo PDF</strong></div>\n\
-						<div class='panel-body'>\n\
-							<label>Nombre:</label>\n\
+			return "<li class='mdo-documentacion-articuloweb event'>\n\
+						<h2 class='heading'>Artículo Web</h2>\n\
+						<div class='col-md-6'>\n\
+							<label>Autor:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Título:</label>\n\
 							<input type='text' class='form-control' /><br>\n\
 							<label>Descripción:</label>\n\
 							<input type='text' class='form-control' /><br>\n\
-							<label>URL del artículo:</label>\n\
+							<label>Nombre del sitio Web:</label>\n\
 							<input type='text' class='form-control' />\n\
-							<br>\n\
-							<button class='btn btn-primary'>O puedes subir un PDF</button>\n\
 						</div>\n\
-					</div>";
+						<div class='col-md-6'>\n\
+							<label>Año en que se realizó la consulta:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Mes en el que se realizó la consulta:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Día en el que se realizó la consulta:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>URL:</label>\n\
+							<input type='text' class='form-control' />\n\
+						</div>\n\
+					</li>";
+		}
+		
+		function ArticuloPDF() {
+			return "<li class='mdo-documentacion-articulopdf event'>\n\
+						<h2 class='heading'>Artículo PDF</h2>\n\
+						<label>Nombre:</label>\n\
+						<input type='text' class='form-control' /><br>\n\
+						<label>Descripción:</label>\n\
+						<input type='text' class='form-control' /><br>\n\
+						<label>URL del artículo:</label>\n\
+						<input type='text' class='form-control' />\n\
+						<br>\n\
+						<button class='btn btn-primary'>O puedes subir un PDF</button>\n\
+					</li>";
 		}
 		
 		function Revista() {
-			return "<div class='mdo-documentacion-revista panel panel-default panel-mdo-documentacion'>\n\
-						<div class='panel-heading'><strong>Revista</strong></div>\n\
-						<div class='panel-body'>\n\
-							<div class='row'>\n\
-								<div class='col-md-6'>\n\
-									<label>Autor:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Título:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Descripción:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Nombre de la revista:</label>\n\
-									<input type='text' class='form-control' />\n\
-								</div>\n\
-								<div class='col-md-6'>\n\
-									<label>Año:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Páginas:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Volumen:</label>\n\
-									<input type='text' class='form-control' /><br>\n\
-									<label>Número:</label>\n\
-									<input type='text' class='form-control' />\n\
-								</div>\n\
-							</div>\n\
+			return "<li class='mdo-documentacion-revista event'>\n\
+						<h2 class='heading'>Revista</h2>\n\
+						<div class='col-md-6'>\n\
+							<label>Autor:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Título:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Descripción:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Nombre de la revista:</label>\n\
+							<input type='text' class='form-control' />\n\
 						</div>\n\
-					</div>";
+						<div class='col-md-6'>\n\
+							<label>Año:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Páginas:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Volumen:</label>\n\
+							<input type='text' class='form-control' /><br>\n\
+							<label>Número:</label>\n\
+							<input type='text' class='form-control' />\n\
+						</div>\n\
+					</li>";
 		}
 		
 		function _crear(tipo) {

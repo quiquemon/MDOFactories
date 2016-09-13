@@ -102,11 +102,11 @@ var MDOUtil = (function() {
 		
 		var _DocumentacionParser = (function() {
 			function PeliculaParser(nombreArtefacto, contenido) {
-				var inputs = contenido.children().eq(0).children().eq(0).children("input");
+				var inputs = contenido.eq(1).children("input");
 				var titulo = inputs[0].value;
 				var descripcion = inputs[1].value;
 				var director = inputs[2].value;
-				inputs = contenido.children().eq(0).children().eq(1).children("input");
+				inputs = contenido.eq(2).children("input");
 				var productora = inputs[0].value;
 				var pais = inputs[1].value;
 				var anyo = inputs[2].value;
@@ -123,10 +123,9 @@ var MDOUtil = (function() {
 			}
 			
 			function VideoParser(nombreArtefacto, contenido) {
-				var inputs = contenido.children("input");
-				var nombre = inputs[0].value;
-				var descripcion = inputs[1].value;
-				var url = inputs[2].value;
+				var nombre = contenido[2].value;
+				var descripcion = contenido[5].value;
+				var url = contenido[8].value;
 				
 				return {
 					artefacto: nombreArtefacto,
@@ -137,11 +136,11 @@ var MDOUtil = (function() {
 			}
 			
 			function LibroParser(nombreArtefacto, contenido) {
-				var inputs = contenido.children().eq(0).children().eq(0).children("input");
+				var inputs = contenido.eq(1).children("input");
 				var autor = inputs[0].value;
 				var titulo = inputs[1].value;
 				var anyo = inputs[2].value;
-				inputs = contenido.children().eq(0).children().eq(1).children("input");
+				inputs = contenido.eq(2).children("input");
 				var ciudad = inputs[0].value;
 				var editorial = inputs[1].value;
 				var volumen = inputs[2].value;
@@ -158,12 +157,12 @@ var MDOUtil = (function() {
 			}
 			
 			function ArticuloWebParser(nombreArtefacto, contenido) {
-				var inputs = contenido.children().eq(0).children().eq(0).children("input");
+				var inputs = contenido.eq(1).children("input");
 				var autor = inputs[0].value;
 				var titulo = inputs[1].value;
 				var descripcion = inputs[2].value;
 				var nombre = inputs[3].value;
-				inputs = contenido.children().eq(0).children().eq(1).children("input");;
+				inputs = contenido.eq(2).children("input");;
 				var anyo = inputs[0].value;
 				var mes = inputs[1].value;
 				var dia = inputs[2].value;
@@ -183,10 +182,9 @@ var MDOUtil = (function() {
 			}
 			
 			function ArticuloPDFParser(nombreArtefacto, contenido) {
-				var inputs = contenido.children("input");
-				var nombre = inputs[0].value;
-				var descripcion = inputs[1].value;
-				var url = inputs[2].value;
+				var nombre = contenido[2].value;
+				var descripcion = contenido[5].value;
+				var url = contenido[8].value;
 				
 				return {
 					artefacto: nombreArtefacto,
@@ -197,12 +195,12 @@ var MDOUtil = (function() {
 			}
 			
 			function RevistaParser(nombreArtefacto, contenido) {
-				var inputs = contenido.children().eq(0).children().eq(0).children("input");
+				var inputs = contenido.eq(1).children("input");
 				var autor = inputs[0].value;
 				var titulo = inputs[1].value;
 				var descripcion = inputs[2].value;
 				var nombre = inputs[3].value;
-				inputs = contenido.children().eq(0).children().eq(1).children("input");
+				inputs = contenido.eq(2).children("input");
 				var anyo = inputs[0].value;
 				var paginas = inputs[1].value;
 				var volumen = inputs[2].value;
@@ -379,7 +377,7 @@ var MDOUtil = (function() {
 	 */
 	function _parseNode(node) {
 		var nombreArtefacto = node.className.split(" ")[0];
-		var contenido = $(node).children().eq(1);
+		var contenido = $(node).children();
 		var tipoParser;
 		
 		if (nombreArtefacto.includes("vivencia"))
