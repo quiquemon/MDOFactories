@@ -15,8 +15,8 @@
         <script>
             var APP_BASE = "${pageContext.request.contextPath}";
         </script>
-        
-        <script src="https://togetherjs.com/togetherjs-min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/together-js-config.js"></script>
+        <script src="${pageContext.request.contextPath}/js/togetherjsEDVA/togetherjs-min.js" type="text/javascript"></script>
         <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/dragula.min.js"></script>

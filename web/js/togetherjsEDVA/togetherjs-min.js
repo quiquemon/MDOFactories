@@ -79,7 +79,7 @@
 
   var styleSheet = "/togetherjs/togetherjs.css";
 
-  var baseUrl = "__baseUrl__";
+  var baseUrl = "";
   if (baseUrl == "__" + "baseUrl__") {
     // Reset the variable if it doesn't get substituted
     baseUrl = "";
@@ -95,7 +95,7 @@
   defaultConfiguration.baseUrl = baseUrl;
 
   // True if this file should use minimized sub-resources:
-  var min = "__min__" == "__" + "min__" ? false : "__min__" == "yes";
+  var min = "yes" == "__" + "min__" ? false : "yes" == "yes";
 
   var baseUrlOverride = localStorage.getItem("togetherjs.baseUrlOverride");
   if (baseUrlOverride) {
@@ -146,8 +146,8 @@
   var version = "unknown";
   // FIXME: we could/should use a version from the checkout, at least
   // for production
-  var cacheBust = "__gitCommit__";
-  if ((! cacheBust) || cacheBust == "__gitCommit__") {
+  var cacheBust = "";
+  if ((! cacheBust) || cacheBust == "") {
     cacheBust = Date.now() + "";
   } else {
     version = cacheBust;
@@ -323,7 +323,9 @@
       "es": "es-BO",
       "es-BO": true,
       "ru": true,
-      "ru-RU": "ru"
+      "ru-RU": "ru",
+      "pl": "pl-PL",
+      "pl-PL": true
     };
 
     if(lang === undefined) {
@@ -539,7 +541,7 @@
     return "TogetherJS";
   };
 
-  var defaultHubBase = "__hubUrl__";
+  var defaultHubBase = "https://hub.togetherjs.com";
   if (defaultHubBase == "__" + "hubUrl"+ "__") {
     // Substitution wasn't made
     defaultHubBase = "https://hub.togetherjs.mozillalabs.com";
