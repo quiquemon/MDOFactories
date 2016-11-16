@@ -22,8 +22,8 @@
         <script src="${pageContext.request.contextPath}/js/dragula.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/mdo-factories.js"></script>
         <script src="${pageContext.request.contextPath}/js/mdo-utilities.js"></script>
-        <script src="${pageContext.request.contextPath}/js/funciones.js"></script>
         <script src="${pageContext.request.contextPath}/js/together-js-comChannel.js" type="text/javascript"></script>
+		<script src="${pageContext.request.contextPath}/js/funciones.js"></script>
     </head>
     <body>
         <div id="header" class="container" align="center">
@@ -105,7 +105,7 @@
                 <div class="col-md-10 col-sm-10 col-xs-8 scrollit">
                     <div class="container">
                         <ul id="contenidoDidacticoBody" class="timeline">
-                            <li class="year">Vivencia</li>
+                            <li class="year">Inicio</li>
                         </ul>
                     </div>
                 </div>
